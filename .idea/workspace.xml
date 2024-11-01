@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb8ef71-5af3-42c8-879a-621fd62721ce" name="Changes" comment="last">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSQ.iml" beforeDir="false" />
-    </list>
+    <list default="true" id="1bb8ef71-5af3-42c8-879a-621fd62721ce" name="Changes" comment="last" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +89,7 @@
       <workItem from="1730422554665" duration="638000" />
       <workItem from="1730423204729" duration="85000" />
       <workItem from="1730423294377" duration="410000" />
-      <workItem from="1730423718288" duration="363000" />
+      <workItem from="1730423718288" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="t">
       <option name="closed" value="true" />
@@ -142,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730423745298</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="last">
+      <option name="closed" value="true" />
+      <created>1730424491105</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730424491105</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,16 +168,5 @@
     <MESSAGE value="t" />
     <MESSAGE value="last" />
     <option name="LAST_COMMIT_MESSAGE" value="last" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
