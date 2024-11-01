@@ -53,11 +53,6 @@ public class Utils {
             }
         return point;
     }
-
-    public static int getC(int num, int d, int F) {
-        return (int) Math.ceil(num / Math.pow(Math.ceil(Math.pow((double) num / F, (1d / d))), d));
-    }
-
     public static BitSet fromPtoZ(long[] point) {
         int d = point.length;
         int maxLength = 0;
@@ -131,61 +126,5 @@ public class Utils {
             }
         }
         return skyline;
-    }
-
-    public static void writePointsToFile(String fileName, long[][] points) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-
-        for (long[] point : points) {
-            for (int i = 0; i < point.length; i++) {
-                writer.write(Long.toString(point[i]));
-                if (i < point.length - 1) {
-                    writer.write(","); // separate values with commas
-                }
-            }
-            writer.newLine(); // new line for the next point
-        }
-
-        writer.close();
-    }
-
-    public static long[][] readPointsFromFile(String fileName, int d) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(fileName));
-        List<long[]> pointsList = new ArrayList<>();
-
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] values = line.split(",");
-            long[] point = new long[d];
-            for (int i = 0; i < d; i++) {
-                point[i] = Long.parseLong(values[i]);
-            }
-            pointsList.add(point);
-        }
-
-        reader.close();
-        return pointsList.toArray(new long[0][d]);
-    }
-
-    public static void testAlgorithmAndLog(long[][] points, int d, String outputFilePath) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath,true))) {
-            writer.write("d: " + d + "\n mbr : LeafCapacity,ExecutionTime(ms)\n"); // 写入表头
-
-            for (int leafCapacity = 50; leafCapacity < 120; leafCapacity += 5) {
-                System.out.println(leafCapacity);
-                MBRSky algorithm = new MBRSky(leafCapacity, points[0].length);
-                algorithm.init(points);
-                long startTime = System.nanoTime();
-                algorithm.skyline(new long[]{0, 0});
-                long endTime = System.nanoTime();
-                long executionTime = (endTime - startTime) / 1_000_000; // 转换为毫秒
-                // 写入每个组合的执行时间
-                writer.write(leafCapacity + "," + executionTime + "\n");
-                writer.flush();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("erro");
-        }
     }
 }

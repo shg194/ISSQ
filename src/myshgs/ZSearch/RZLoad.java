@@ -16,7 +16,6 @@ public class RZLoad {
     }
 
     private ZBNode createNode(List<BitSet> window, Deque<BitSet> deque) {
-        // 创建叶节点
         int M = (int)(0.4*C);
         ZBDataNode leafNode = new ZBDataNode(null, d, C);
         BitSet bitSet = window.get(0);
@@ -45,7 +44,6 @@ public class RZLoad {
 
     private ZBNode merge(List<ZBNode> window, Deque<ZBNode> deque) {
         int M = (int)(F*0.4);
-        // 创建节点
         ZBDirNode Node = new ZBDirNode(null, d, F);
         BitSet minzt = window.get(0).getMinzt();
         BitSet cur = utils.getArea(minzt, window.get(window.size() - 1).getMaxzt(),d);
