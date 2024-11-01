@@ -5,7 +5,7 @@ import myshgs.Utils;
 
 import java.util.*;
 
-public class ZASky {
+public class ISSQ {
     public ZBlock root;
     private int C;
     private int d;
@@ -13,7 +13,7 @@ public class ZASky {
     private int Q;
     private final int len;
 
-    public ZASky(int d, int C, int G, int Q) {
+    public ISSQ(int d, int C, int G, int Q) {
         this.d = d;
         this.C = C;
         this.Q = Q;
@@ -324,7 +324,7 @@ public class ZASky {
         for (int ii = 0; ii < 10000; ii++) {
             int d = 5;
             int T = 3;
-            ZASky zas = new ZASky(d, T, 2, 2);
+            ISSQ zas = new ISSQ(d, T, 2, 2);
             long[][] points = Utils.generateIndependentData(d, 300, 300);
 //            long[][] points = {{4, 5}, {2, 6}, {3, 4}, {9, 6}, {4, 9}, {0, 5}, {6, 1}, {2, 9}, {1, 8}, {4, 9}};
 

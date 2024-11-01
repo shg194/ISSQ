@@ -23,12 +23,12 @@ public class BBS {
         root = tree.root;
     }
 
-    public List<long[]> skyline(long[] count) { // Compute the skyline of the current tree with BBS
+    public List<long[]> skyline(long[] count) {
         List<long[]> res = new ArrayList<>();
         PriorityQueue<MBR> deque = new PriorityQueue<>();
         HashMap<MBR, RTNode> record = new HashMap<>();
 
-        if (root instanceof RTDataNode) { // Only one node in the tree
+        if (root instanceof RTDataNode) {
             deque.addAll(Arrays.asList(root.datas).subList(0, root.getUsedSpace()));
             count[1]++;
             while (!deque.isEmpty()) {
@@ -41,7 +41,7 @@ public class BBS {
         }
         RTDirNode r = (RTDirNode) root;
         count[1]++;
-        for (int i = 0; i < r.getUsedSpace(); i++) { // Include all data from root in the heap
+        for (int i = 0; i < r.getUsedSpace(); i++) {
             count[1]++;
             deque.add(r.datas[i]);
             record.put(r.datas[i], r.getChild(i));
@@ -50,12 +50,12 @@ public class BBS {
         while (!deque.isEmpty()) {
             MBR rec = deque.poll();
             count[1]++;
-            if (isDominate(res, rec, count)) { // Rectangle is not dominated by current skyline, continue
-                if (record.get(rec) != null) { // The corresponding node is an index node
+            if (isDominate(res, rec, count)) {
+                if (record.get(rec) != null) {
                     RTNode r1 = record.get(rec);
                     for (int i = 0; i < r1.getUsedSpace(); i++) {
                         count[1]++;
-                        if (isDominate(res, r1.datas[i], count)) { // The indices that haven't been dominated, might contain new skyline points
+                        if (isDominate(res, r1.datas[i], count)) {
                             deque.add(r1.datas[i]);
                             if (r1 instanceof RTDirNode r2) {
                                 record.put(r2.datas[i], r2.getChild(i));
@@ -66,7 +66,7 @@ public class BBS {
                     }
                 } else {
                     res.add(rec.getMax());
-                } // Data node
+                }
             }
         }
         return res;
@@ -77,7 +77,7 @@ public class BBS {
     }
 
 
-    public boolean isDominate(List<long[]> list, MBR rec, long[] count) { // Check if the rectangle is dominated by the given skyline points
+    public boolean isDominate(List<long[]> list, MBR rec, long[] count) {
         for (long[] rectangle : list) {
             if (Utils.isDominatedBy(rectangle, rec.getMin(), count))
                 return false;

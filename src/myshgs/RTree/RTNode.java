@@ -1,5 +1,3 @@
-// Class for the node of R Tree. Two subclasses for data node and index node
-
 package myshgs.RTree;
 
 

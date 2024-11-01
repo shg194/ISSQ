@@ -1,7 +1,4 @@
-// Class for index node
-
 package myshgs.RTree;
-
 
 import java.util.ArrayList;
 import java.util.List;

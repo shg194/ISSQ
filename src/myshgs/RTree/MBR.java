@@ -1,6 +1,3 @@
-// The rectangle that cover several points
-// In this program, data point is denoted by rectangle with the same low and high coordinate
-
 package myshgs.RTree;
 
 import java.util.Arrays;

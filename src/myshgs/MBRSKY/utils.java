@@ -2,8 +2,6 @@ package myshgs.MBRSKY;
 
 
 public class utils {
-
-    //mbr a是否支配mbr b
     public static boolean DTDominated(MBR a, MBR b, int d,long[] count) {
         count[0]++;
         boolean flag = false, isDominate = false, equ = true, equ1 = true;

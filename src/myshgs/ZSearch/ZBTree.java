@@ -1,6 +1,5 @@
 package myshgs.ZSearch;
 
-
 import myshgs.Utils;
 
 import java.util.*;
@@ -196,13 +195,12 @@ public class ZBTree {
 
             if (currentNode instanceof ZBDirNode zbDirNode) {
                 System.out.println("cur : " + zbDirNode);
-                // 打印当前节点的所有键
                 for (int i = 0; i < currentNode.getUsedSpace(); i++) {
                     System.out.print(zbDirNode.getDatas(i) + " ");
                 }
                 System.out.println();
             } else if (currentNode instanceof ZBDataNode zbDataNode) {
-                // 打印当前节点的所有键
+
                 for (int i = 0; i < currentNode.getUsedSpace(); i++) {
                     System.out.print(Arrays.toString(zbDataNode.getData(i)) + " ");
                 }
@@ -210,7 +208,6 @@ public class ZBTree {
                 System.out.println();
             }
 
-            // 将当前节点的所有子节点加入队列
             if (currentNode instanceof ZBDirNode) {
                 for (int i = 0; i < currentNode.getUsedSpace(); i++) {
                     queue.add(((ZBDirNode) currentNode).getChildren(i));
